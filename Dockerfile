@@ -1,6 +1,11 @@
 # Use the official Python base image
 FROM python:3.9-slim
 
+# Update system packages and OpenSSL
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+    openssl libssl-dev && \
+    apt-get clean
+
 # Set the working directory
 WORKDIR /Users/kavyaparvathapuram/Desktop/swapna5307
 
